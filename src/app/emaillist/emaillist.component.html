@@ -1,0 +1,32 @@
+<div>
+	<a routerLink="/emailform">Write another email</a>
+</div>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>From</th>
+  <th>To</th>
+  <th>Subject</th>
+  <th>Body</th>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr *ngFor="let email of emailListLocal">
+  <td>{{email.id}}</td>
+  <td>{{email.from}}</td>
+  <td>{{email.to}}</td>
+  <td>{{email.subject}}</td>
+  <td>{{email.body}}</td>
+  <td>
+  	<button>
+	  <a routerLink="/emailviewer/{{email.id}}">View email</a>
+	  </button>
+  </td>
+  <td>
+  	<button (click) = delete(email)>Delete</button>
+  </td>
+</tr>
+</tbody>
